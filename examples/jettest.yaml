@@ -1,0 +1,76 @@
+tests:
+  - name: Get user profile
+    description: Retrieve user profile information
+    request:
+      method: GET
+      path: /api/users/profile
+      params:
+        user_id: [12345]
+      with_token: true
+    expect:
+      status_code: 200
+      max_latency: 5000ms
+      body:
+        - path: data.username
+          value: "john_doe"
+        - path: data.email
+          value: "john.doe@example.com"
+
+  - name: Create new post
+    description: Create a new post on the platform
+    request:
+      method: POST
+      path: /api/posts/create
+      params:
+        user_id: [12345]
+      with_token: true
+      body: '{"title": "New Post", "content": "Hello world!"}'
+      headers:
+        Content-Type:
+          - application/json
+    expect:
+      status_code: 201
+      max_latency: 7000ms
+      body:
+        - path: status
+          value: "published"
+
+  - name: Search posts
+    description: Search for posts based on keywords
+    request:
+      method: GET
+      path: /api/posts/search
+      params:
+        keyword: ["technology", "tutorial"]
+      with_token: true
+    expect:
+      status_code: 200
+      max_latency: 6000ms
+
+  - name: Get comments
+    description: Retrieve comments for a specific post
+    request:
+      method: GET
+      path: /api/posts/comments
+      params:
+        post_id: [9876]
+      with_token: true
+    expect:
+      status_code: 200
+      max_latency: 8000ms
+
+  - name: Update user settings
+    description: Update user notification settings
+    request:
+      method: PUT
+      path: /api/users/settings/update
+      params:
+        user_id: [12345]
+      with_token: true
+      body: '{"notifications": {"email": true, "sms": false}}'
+      headers:
+        Content-Type:
+          - application/json
+    expect:
+      status_code: 204
+      max_latency: 5000ms
