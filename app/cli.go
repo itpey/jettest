@@ -249,8 +249,10 @@ func (b *jet) test(ts ...test) results {
 			}
 		}(t)
 	}
-	timeout := 30 * time.Second
+
+	timeout := time.Duration(b.client.Timeout.Seconds()+10) * time.Second
 	results := results{Total: len(ts)}
+
 	for i := 0; i < len(ts); i++ {
 		t := time.NewTimer(timeout)
 		select {
