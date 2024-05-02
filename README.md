@@ -105,7 +105,7 @@ tests:
 - `max_latency`: Maximum acceptable response latency.
 - `body`: List of expected response body conditions.
 
-For more examples and detailed usage, refer to the [examples](https://github.com/itpey/jettest/tree/main/examples) examples provided in the repository.
+For more examples and detailed usage, refer to the [examples](https://github.com/itpey/jettest/tree/main/examples) provided in the repository.
 
 # Feedback and Contributions
 
