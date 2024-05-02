@@ -73,7 +73,7 @@ type request struct {
 	Path          string      `yaml:"path"`
 	Params        url.Values  `yaml:"params"`
 	Headers       http.Header `yaml:"headers"`
-	WithClientID  bool        `yaml:"with_clientID"`
+	WithClientID  bool        `yaml:"with_client_id"`
 	WithAuthToken bool        `yaml:"with_token"`
 	Body          string      `yaml:"body"`
 }
@@ -86,7 +86,7 @@ type input struct {
 // Expect contains the expectations of the API response or behavior
 type expect struct {
 	StatusCode int           `yaml:"status_code"`
-	MaxLatency time.Duration `yaml:"max_latnecy"`
+	MaxLatency time.Duration `yaml:"max_latency"`
 	Body       []body        `yaml:"body"`
 }
 
