@@ -359,7 +359,7 @@ func (b body) checkResponseBody(body string) error {
 // validates if the HTTP request method is supported
 func (t test) validateRequestMethod() error {
 	switch strings.ToUpper(t.Request.Method) {
-	case "GET", "POST", "PUT", "DELETE":
+	case "GET", "POST", "PUT", "PATCH", "DELETE":
 		return nil
 	}
 	return fmt.Errorf("http method '%s' is not supported", t.Request.Method)
