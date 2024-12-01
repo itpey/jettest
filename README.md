@@ -27,7 +27,7 @@ JetTest is a versatile command-line tool designed for effortless API testing usi
 # Features
 
 - **Simple YAML Configuration**: Define API tests easily using YAML files.
-- **Flexible HTTP Methods**: Supports GET, POST, and PUT requests.
+- **Flexible HTTP Methods**: Supports `GET`, `POST`, `PUT`, `PATCH` and `DELETE` requests.
 - **Customizable Parameters**: Specify API host, client ID, authentication token, and request timeout.
 - **Debug Mode**: Enable detailed logging for request and response information.
 - **Response Validation**: Validate expected status codes, response latency, and specific response body segments.
